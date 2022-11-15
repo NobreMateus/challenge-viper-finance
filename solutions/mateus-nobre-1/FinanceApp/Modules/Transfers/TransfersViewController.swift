@@ -25,7 +25,8 @@ extension TransfersViewController: TransferViewDelegate {
 
     func didPressChooseContactButton() {
 
-        let navigationController = UINavigationController(rootViewController: ContactListViewController())
+        let contactListViewController = ContactListConfigurator.make()
+        let navigationController = UINavigationController(rootViewController: contactListViewController)
         self.present(navigationController, animated: true)
     }
 

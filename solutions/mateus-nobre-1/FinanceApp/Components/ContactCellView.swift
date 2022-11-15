@@ -38,7 +38,6 @@ class ContactCellView: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 17)
-        label.text = "Contact Name"
         return label
     }()
 
@@ -47,7 +46,6 @@ class ContactCellView: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .gray
         label.font = UIFont.systemFont(ofSize: 14)
-        label.text = "(11) 99999-9999"
         return label
     }()
 
@@ -61,6 +59,11 @@ class ContactCellView: UITableViewCell {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func update(contact: ContactViewModel) {
+        contactNameLabel.text = contact.name
+        contactPhoneLabel.text = contact.phone
     }
 }
 
